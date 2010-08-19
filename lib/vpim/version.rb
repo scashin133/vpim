@@ -7,9 +7,10 @@
 =end
 
 module Vpim
-  PRODID = '-//Octet Cloud//vPim 9.3.15//EN'
 
-  VERSION = '9.3.15'
+  VERSION = open(File.join(File.dirname(__FILE__), '..', '..', 'VERSION')).read
+  
+  PRODID = "-//Octet Cloud//vPim #{VERSION}//EN"
 
   # Return the API version as a string.
   def Vpim.version

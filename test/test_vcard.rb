@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require 'test/common'
 require 'vpim/vcard'
 require 'test/unit'
 require 'date'

@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'pp'
-
+$:.unshift File.dirname(__FILE__) + "/../lib"
 begin
   require 'rubygems'
 rescue LoadError
