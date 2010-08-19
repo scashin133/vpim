@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "vpim"
+    gem.name = "scashin133-vpim"
     gem.summary = %Q{iCalendar and vCard support for ruby}
     gem.description = %Q{This is a pure-ruby library for decoding and encoding vCard and iCalendar data ("personal information") called vPim.}
     gem.email = "vieuxtech@gmail.com; scashin133@gmail.com"
