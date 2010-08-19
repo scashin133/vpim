@@ -9,6 +9,7 @@
 require 'vpim/rfc2425'
 require 'vpim/vpim'
 require 'date'
+require 'base64'
 
 module Vpim
 
@@ -67,7 +68,7 @@ module Vpim
             # check if we need to do any encoding
             if Vpim::Methods.casecmp?(pname, 'ENCODING') && pvalue == :b64
               pvalue = 'B' # the RFC definition of the base64 param value
-              value = [ value.to_str ].pack('m').gsub("\n", '')
+              value = "\s\s" + Base64.encode64(value).split("\n").join("\n\s\s")
             end
 
             line << sep << pvalue
@@ -76,6 +77,9 @@ module Vpim
         end
 
         line << ':'
+        if line =~ /ENCODING=B/
+          line << "\n"
+        end
 
         line << Field.value_str(value)
 
